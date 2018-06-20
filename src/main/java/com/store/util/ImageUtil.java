@@ -6,6 +6,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -27,16 +28,16 @@ public class ImageUtil {
     * @Author: Hawk.Song
     * @Date: 6/16/18
     */
-    public static String generateThumbnail(File thumbnail, String targetAddr){
+    public static String generateThumbnail(InputStream thumbnailInputStream, String fileName, String targetAddr){
         //because the name of pics given by user may be duplicate, we should generate a random one
         String realFileName = getRandomFileName();
-        String extension = getFileExtension(thumbnail); // get pic extension name like png.
+        String extension = getFileExtension(fileName); // get pic extension name like png.
         makeDirPath(targetAddr);//if this directory do not exist, create it.
         String relativeAddr = targetAddr  +realFileName + extension;
         File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
         //create thumbnail
         try{
-            Thumbnails.of(thumbnail).size(200, 200)
+            Thumbnails.of(thumbnailInputStream).size(200, 200)
                     .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
                     .outputQuality(0.8f).toFile(dest);
         } catch (IOException e){
@@ -64,9 +65,8 @@ public class ImageUtil {
     * @Author: Hawk.Song 
     * @Date: 6/18/18 
     */ 
-    private static String getFileExtension(File cFile){
-        String originalFileName = cFile.getName();
-        return originalFileName.substring(originalFileName.lastIndexOf("."));
+    private static String getFileExtension(String fileName){
+        return fileName.substring(fileName.lastIndexOf("."));
     }
     /** 
     * @Description: create directory on target path, namely, /home/work/xiangze/xxxxjpg, then all three folders need to be created

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.Date;
 
 @Service // means this class need spring to manage, or you get noSuchBeanDefinition error
@@ -23,7 +24,7 @@ public class ShopServiceImpl implements ShopService {
 
     @Override
     @Transactional // means this method need transaction support
-    public ShopExecution addShop(Shop shop, File shopImg) {
+    public ShopExecution addShop(Shop shop, InputStream shopImgInputStream, String fileName) {
         //check if shop information is null
         if(shop == null) {
             return new ShopExecution(ShopStateEnum.NULL_SHOP);
@@ -39,10 +40,10 @@ public class ShopServiceImpl implements ShopService {
                 //ShopOperationException can the transaction terminate and roll back
                 throw new ShopOperationException("failed to create the shop");
             } else {
-                if(shopImg != null) {
+                if(shopImgInputStream != null) {
                     //store pics
                     try {
-                        addShopImg(shop, shopImg);
+                        addShopImg(shop, shopImgInputStream, fileName);
                     } catch(Exception e) {
                         throw new ShopOperationException("addShopImg Error: " + e.getMessage());
                     }
@@ -59,10 +60,10 @@ public class ShopServiceImpl implements ShopService {
         return new ShopExecution(ShopStateEnum.CHECK, shop);
     }
 
-    private void addShopImg(Shop shop, File shopImg){
+    private void addShopImg(Shop shop, InputStream shopImgInputStream, String fileName){
         //get related path of shop pic directoy
         String dest = PathUtil.getShopImagePath(shop.getShopId());
-        String shopImgAddr = ImageUtil.generateThumbnail(shopImg, dest);
+        String shopImgAddr = ImageUtil.generateThumbnail(shopImgInputStream, fileName, dest);
         shop.setShopImg(shopImgAddr);
 
     }
