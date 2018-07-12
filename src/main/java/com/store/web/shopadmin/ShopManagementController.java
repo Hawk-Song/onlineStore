@@ -2,13 +2,15 @@ package com.store.web.shopadmin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.store.dto.ShopExecution;
+import com.store.entity.Area;
 import com.store.entity.PersonInfo;
 import com.store.entity.Shop;
+import com.store.entity.ShopCategory;
 import com.store.enums.ShopStateEnum;
+import com.store.service.AreaService;
+import com.store.service.ShopCategoryService;
 import com.store.service.ShopService;
 import com.store.util.HttpServletRequestUtil;
-import com.store.util.ImageUtil;
-import com.store.util.PathUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,11 +21,10 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -31,6 +32,30 @@ import java.util.Map;
 public class ShopManagementController {
     @Autowired
     private ShopService shopService;
+    @Autowired
+    private ShopCategoryService shopCategoryService;
+    @Autowired
+    private AreaService areaService;
+
+
+    @RequestMapping(value="getshopinitinfo", method=RequestMethod.GET)
+    @ResponseBody
+    private Map<String, Object> getShopInitInfo(){
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        List<ShopCategory>  shopCategoryList = new ArrayList<ShopCategory>();
+        List<Area> areaList = new ArrayList<Area>();
+        try{
+            shopCategoryList = shopCategoryService.getShopCategoryList(new ShopCategory());
+            areaList = areaService.getAreaList();
+            modelMap.put("shopCategoryList", shopCategoryList);
+            modelMap.put("areaList", areaList);
+            modelMap.put("success", true);
+        } catch (Exception e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.getMessage());
+        }
+        return modelMap; //modelMap then will be convert to json by ResponseBody
+    }
 
     //HttpSerlvetRequest: request from front end
     @RequestMapping(value="/registershop", method=RequestMethod.POST)

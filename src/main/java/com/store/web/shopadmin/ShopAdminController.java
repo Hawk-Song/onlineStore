@@ -13,6 +13,6 @@ public class ShopAdminController {
         return "shop/shopoperation";
         //why not html/shop?
         //because in spring configuration file spring-web.xml
-        //InternalResourceViewResolver, we have set prefix value="/WEB-INF/html/"
+        //InternalResourceViewResolver, we have set prefix value="/WEB-INF/html/", and suffix as .html
     }
 }
