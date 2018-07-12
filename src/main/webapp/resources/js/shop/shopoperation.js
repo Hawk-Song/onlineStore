@@ -14,7 +14,6 @@ $(function(){
                 data.areaList.map(function(item, index){
                     tempAreaHtml += '<option data-id="' + item.areaId + '">' + item.areaName + '</option>';
                 })
-                console.log(tempHtml);
                 $('#shop-category').html(tempHtml);
                 $('#area').html(tempAreaHtml);
             }
@@ -38,8 +37,14 @@ $(function(){
             };
             var shopImg = $('#shop-img')[0].files[0];
             var formData = new FormData();
+            var verifyCodeActual = $('#j_captcha').val();
+            if(!verifyCodeActual){
+                $.toast('please input captcha')
+                return;
+            }
             formData.append('shopImg', shopImg);
             formData.append('shopStr', JSON.stringify(shop));
+            formData.append('verifyCodeActual', verifyCodeActual);
             $.ajax({
                 url: registerShopUrl,
                 type: 'POST',
@@ -54,6 +59,7 @@ $(function(){
                         $.toast('Submit Fail !' + data.errMsg);
                     }
                 }
+                $('#captcha_img').click();
 
             });
         })

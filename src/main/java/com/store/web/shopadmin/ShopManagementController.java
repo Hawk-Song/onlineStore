@@ -10,6 +10,7 @@ import com.store.enums.ShopStateEnum;
 import com.store.service.AreaService;
 import com.store.service.ShopCategoryService;
 import com.store.service.ShopService;
+import com.store.util.CodeUtil;
 import com.store.util.HttpServletRequestUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -62,6 +63,13 @@ public class ShopManagementController {
     @ResponseBody //convert to json
     private Map<String, Object> registerShop(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
+        //captcha
+        if(!CodeUtil.checkVerifyCode(request)){
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "wrong captcha");
+            return modelMap;
+        }
+
         //get information from front end, convert it to object
         String shopStr = HttpServletRequestUtil.getString(request, "shopStr");
         ObjectMapper mapper = new ObjectMapper();
