@@ -3,6 +3,16 @@ package com.store.dao;
 import com.store.entity.Shop;
 
 public interface ShopDao {
+
+    /**
+    * @Description: look up shop information by id
+    * @Param:
+    * @return:
+    * @Author: Hawk.Song
+    * @Date: 7/12/18
+    */
+    Shop queryByShopId(long shopId);
+
     /** 
     * @Description:  register a new shop
     * @Param:  shop class
@@ -11,6 +21,7 @@ public interface ShopDao {
     * @Date: 6/16/18 
     */ 
     int insertShop(Shop shop);
+
     /** 
     * @Description: update shop info 
     * @Param:  shop

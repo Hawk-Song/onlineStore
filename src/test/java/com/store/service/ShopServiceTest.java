@@ -7,6 +7,7 @@ import com.store.entity.PersonInfo;
 import com.store.entity.Shop;
 import com.store.entity.ShopCategory;
 import com.store.enums.ShopStateEnum;
+import com.store.exception.ShopOperationException;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -21,6 +22,18 @@ import static net.sf.ezmorph.test.ArrayAssertions.assertEquals;
 public class ShopServiceTest extends BaseTest {
     @Autowired
     private ShopService shopService;
+
+    @Test
+    public void testModifyShop() throws ShopOperationException, FileNotFoundException {
+        Shop shop = new Shop();
+        shop.setShopId(4L);
+        shop.setShopName("modified Name");
+        File shopImg = new File("/Users/savokisong/Downloads/SSM到Spring Boot-从零开发校园商铺平台/images/item/shop/20/20170606203631552081.png");
+        InputStream is = new FileInputStream(shopImg);
+        ShopExecution se = shopService.modifyShop(shop, is, shopImg.getName());
+        System.out.println("new pic addr: " + se.getShop().getShopImg());
+
+    }
 
     @Test
     public void testAddShop() throws FileNotFoundException {

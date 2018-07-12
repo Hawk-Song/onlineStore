@@ -16,6 +16,15 @@ import static net.sf.ezmorph.test.ArrayAssertions.assertEquals;
 public class ShopDaoTest extends BaseTest {
     @Autowired
     private ShopDao shopDao;
+
+    @Test
+    public void testQueryByShopId(){
+        long shopId=1;
+        Shop shop = shopDao.queryByShopId(shopId);
+        System.out.println("areaId:" + shop.getArea().getAreaId());
+        System.out.println("areaName:" + shop.getArea().getAreaName());
+    }
+
     @Test
     @Ignore // have test it, do not want to test it again.
     public void testInsertShop(){
@@ -43,6 +52,7 @@ public class ShopDaoTest extends BaseTest {
     }
 
     @Test
+    @Ignore
     public void testUpdateShop(){
         Shop shop =new Shop();
         shop.setShopId(1L);
@@ -53,4 +63,5 @@ public class ShopDaoTest extends BaseTest {
         assertEquals(1, effectedNum);
 
     }
+
 }
