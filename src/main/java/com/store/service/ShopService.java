@@ -7,7 +7,15 @@ import com.store.exception.ShopOperationException;
 import java.io.InputStream;
 
 public interface ShopService {
-    
+
+    /** 
+    * @Description:  return shop list pagingly based on the shopCondition
+    * @Param:  
+    * @return:  
+    * @Author: Hawk.Song 
+    * @Date: 7/13/18 
+    */ 
+    public ShopExecution getShopList(Shop shopCondition, int pageIndex, int pageSize);
     /** 
     * @Description: get shop information by id 
     * @Param:  

@@ -7,6 +7,7 @@ import com.store.enums.ShopStateEnum;
 import com.store.exception.ShopOperationException;
 import com.store.service.ShopService;
 import com.store.util.ImageUtil;
+import com.store.util.PageCalculator;
 import com.store.util.PathUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,12 +16,29 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.File;
 import java.io.InputStream;
 import java.util.Date;
+import java.util.List;
 
 @Service // means this class need spring to manage, or you get noSuchBeanDefinition error
 public class ShopServiceImpl implements ShopService {
 
     @Autowired
     private ShopDao shopDao;
+
+    @Override
+    public ShopExecution getShopList(Shop shopCondition, int pageIndex, int pageSize) {
+        //change pageIndex to rowIdex
+        int rowIndex = PageCalculator.calculateRowIddex(pageIndex, pageSize);
+        List<Shop> shopList = shopDao.queryShopList(shopCondition, rowIndex, pageSize);
+        int count = shopDao.queryShopCount(shopCondition);
+        ShopExecution se = new ShopExecution();
+        if(shopList != null) {
+            se.setShopList(shopList);
+            se.setCount(count);
+        } else {
+            se.setState(ShopStateEnum.INNER_ERROR.getState());
+        }
+        return se;
+    }
 
     @Override
     @Transactional // means this method need transaction support

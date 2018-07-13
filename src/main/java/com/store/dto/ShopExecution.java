@@ -21,7 +21,8 @@ public class ShopExecution {
     //shop list(used in search)
     private List<Shop> shopList;
 
-
+    public ShopExecution(){
+    }
     //constructor for failure to register a shop
     public ShopExecution(ShopStateEnum stateEnum){
         this.state = stateEnum.getState();

@@ -7,11 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="109b8421-30b8-4766-aff4-6a2718b8d772" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/store/util/PageCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/dao/ShopDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/dao/ShopDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ShopDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShopDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/store/dao/ShopDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/store/dao/ShopDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/store/dao/ShopDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/dto/ShopExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/dto/ShopExecution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/service/ShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/service/impl/ShopServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/service/impl/ShopServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/store/service/ShopServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/store/service/ShopServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/store/service/impl/ShopServiceImpl.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,20 +25,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ShopDaoTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/store/dao/ShopDaoTest.java">
+      <file leaf-file-name="ShopService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/store/service/ShopService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="20" selection-start-line="20" selection-end-line="38" selection-end-column="5" />
+            <state relative-caret-position="90">
+              <caret line="10" selection-start-line="10" selection-end-line="17" selection-end-column="86" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShopDao.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ShopDao.xml">
+      <file leaf-file-name="ShopServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/store/service/impl/ShopServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="102" column="51" lean-forward="true" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="51" />
+            <state relative-caret-position="254">
+              <caret line="37" column="1" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+              <folding>
+                <element signature="e#2912#2913#0" expanded="true" />
+                <element signature="e#2964#2965#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShopExecution.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/store/dto/ShopExecution.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+              <folding>
+                <element signature="e#1551#1552#0" expanded="true" />
+                <element signature="e#1578#1579#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShopServiceTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/store/service/ShopServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="32" column="67" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -54,6 +82,7 @@
     <findStrings>
       <find>testproducer</find>
       <find>myo2o</find>
+      <find>se</find>
     </findStrings>
     <replaceStrings>
       <replace>textproducer</replace>
@@ -86,17 +115,19 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/store/util/CodeUtil.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopoperation.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/store/service/ShopService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/store/util/ImageUtil.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/store/service/ShopServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/store/service/impl/ShopServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/logback.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/store/web/shopadmin/ShopManagementController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/common/common.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/shop/shopoperation.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/store/dao/ShopDao.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/store/dao/ShopDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/ShopDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/store/service/ShopService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/store/util/PageCalculator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/store/dao/ShopDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/store/service/impl/ShopServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/store/dto/ShopExecution.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/store/service/ShopServiceTest.java" />
       </list>
     </option>
   </component>
@@ -175,7 +206,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="onlineStore" type="b2602c69:ProjectViewProjectNode" />
@@ -183,14 +214,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="onlineStore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="onlineStore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="onlineStore" type="b2602c69:ProjectViewProjectNode" />
@@ -221,6 +244,15 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="store" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="onlineStore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="onlineStore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -260,35 +292,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ShopDaoTest.testQueryShopListAndCount">
+  <component name="RunManager" selected="JUnit.ShopServiceTest.testGetShopList">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="ShopDaoTest.testQueryByShopId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="onlineStore" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.store.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.store.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.store.dao.ShopDaoTest" />
-      <option name="METHOD_NAME" value="testQueryByShopId" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
     </configuration>
     <configuration name="ShopDaoTest.testQueryShopList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="onlineStore" />
@@ -350,6 +359,29 @@
       <option name="MAIN_CLASS_NAME" value="com.store.service.ShopServiceTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="ShopServiceTest.testGetShopList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="onlineStore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.store.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.store.service" />
+      <option name="MAIN_CLASS_NAME" value="com.store.service.ShopServiceTest" />
+      <option name="METHOD_NAME" value="testGetShopList" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -494,19 +526,19 @@
     </configuration>
     <list>
       <item itemvalue="Tomcat Server.onlineStore" />
-      <item itemvalue="JUnit.ShopDaoTest.testQueryByShopId" />
       <item itemvalue="JUnit.ShopServiceTest.testModifyShop" />
       <item itemvalue="JUnit.ShopServiceTest" />
       <item itemvalue="JUnit.ShopDaoTest.testQueryShopList" />
       <item itemvalue="JUnit.ShopDaoTest.testQueryShopListAndCount" />
+      <item itemvalue="JUnit.ShopServiceTest.testGetShopList" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ShopServiceTest.testGetShopList" />
         <item itemvalue="JUnit.ShopDaoTest.testQueryShopListAndCount" />
         <item itemvalue="JUnit.ShopDaoTest.testQueryShopList" />
         <item itemvalue="JUnit.ShopServiceTest.testModifyShop" />
         <item itemvalue="JUnit.ShopServiceTest" />
-        <item itemvalue="JUnit.ShopDaoTest.testQueryByShopId" />
       </list>
     </recent_temporary>
   </component>
@@ -527,26 +559,11 @@
       <workItem from="1531426138924" duration="7320000" />
       <workItem from="1531435836618" duration="3520000" />
       <workItem from="1531453824215" duration="176000" />
-      <workItem from="1531468187040" duration="9182000" />
+      <workItem from="1531468187040" duration="11046000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ShopServiceTest_testModifyShop - 2018.07.12 at 15h 35m 04s.xml">
-      <configuration name="ShopServiceTest.testModifyShop" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ShopServiceTest - 2018.07.12 at 15h 36m 45s.xml">
-      <configuration name="ShopServiceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ShopServiceTest_testModifyShop - 2018.07.12 at 15h 36m 57s.xml">
-      <configuration name="ShopServiceTest.testModifyShop" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ShopServiceTest_testModifyShop - 2018.07.12 at 15h 43m 14s.xml">
-      <configuration name="ShopServiceTest.testModifyShop" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ShopServiceTest_testModifyShop - 2018.07.13 at 02h 11m 39s.xml">
-      <configuration name="ShopServiceTest.testModifyShop" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ShopDaoTest_testQueryShopList - 2018.07.13 at 03h 27m 29s.xml">
       <configuration name="ShopDaoTest.testQueryShopList" configurationId="JUnit" />
     </history-entry>
@@ -562,9 +579,24 @@
     <history-entry file="ShopDaoTest_testQueryShopListAndCount - 2018.07.13 at 03h 36m 42s.xml">
       <configuration name="ShopDaoTest.testQueryShopListAndCount" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ShopDaoTest_testQueryShopListAndCount - 2018.07.13 at 04h 07m 31s.xml">
+      <configuration name="ShopDaoTest.testQueryShopListAndCount" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ShopServiceTest_testGetShopList - 2018.07.13 at 04h 07m 50s.xml">
+      <configuration name="ShopServiceTest.testGetShopList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ShopServiceTest_testGetShopList - 2018.07.13 at 04h 08m 40s.xml">
+      <configuration name="ShopServiceTest.testGetShopList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ShopServiceTest_testGetShopList - 2018.07.13 at 04h 09m 20s.xml">
+      <configuration name="ShopServiceTest.testGetShopList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ShopServiceTest_testGetShopList - 2018.07.13 at 04h 09m 45s.xml">
+      <configuration name="ShopServiceTest.testGetShopList" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38864000" />
+    <option name="totallyTimeSpent" value="40728000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -598,9 +630,9 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" weight="0.32965517" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32827586" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4983845" weight="0.50482756" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4983845" visible="true" weight="0.50344825" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32965517" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32827586" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32827586" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26655897" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -660,7 +692,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/store/service/impl/ShopServiceImpl.java</url>
-          <line>83</line>
+          <line>101</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
@@ -675,13 +707,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/store/web/shopadmin/ShopAdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -806,28 +831,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/store/service/ShopService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.2/mybatis-3.4.2-sources.jar!/org/apache/ibatis/binding/MapperProxy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
           <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/store/service/impl/ShopServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
-          <folding>
-            <element signature="e#2912#2913#0" expanded="true" />
-            <element signature="e#2939#2940#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -842,16 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
           <caret line="207" selection-start-line="207" selection-end-line="207" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/store/dto/ShopExecution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="e#1578#1579#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -887,13 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
           <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/store/service/ShopServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
@@ -996,17 +986,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/store/dao/ShopDaoTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ShopDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="20" selection-start-line="20" selection-end-line="38" selection-end-column="5" />
+        <state relative-caret-position="1530">
+          <caret line="102" column="51" lean-forward="true" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ShopDao.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/store/util/PageCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="102" column="51" lean-forward="true" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="51" />
+        <state>
+          <caret selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/store/service/ShopService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" selection-start-line="10" selection-end-line="17" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/store/service/impl/ShopServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="37" column="1" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+          <folding>
+            <element signature="e#2912#2913#0" expanded="true" />
+            <element signature="e#2964#2965#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/store/dao/ShopDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/store/dto/ShopExecution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding>
+            <element signature="e#1551#1552#0" expanded="true" />
+            <element signature="e#1578#1579#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/store/service/ShopServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="32" column="67" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
         </state>
       </provider>
     </entry>
