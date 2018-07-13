@@ -38,6 +38,25 @@ public class ShopManagementController {
     @Autowired
     private AreaService areaService;
 
+    @RequestMapping(value="/getshopbyid", method=RequestMethod.GET)
+    @ResponseBody
+    private Map<String, Object> getShopById(HttpServletRequest request) {
+            Map<String, Object> modelMap = new HashMap<String, Object>();
+            Long shopId = HttpServletRequestUtil.getLong(request, "shopId");
+            if (shopId > -1) {
+                try {
+                    Shop shop = shopService.getByshopId(shopId);
+                    List<Area> areaList = areaService.getAreaList();
+                    modelMap.put("shop", shop);
+                    modelMap.put("areaList", areaList);
+                    modelMap.put("success", true);
+                } catch(Exception e) {
+                    modelMap.put("success", false);
+                    modelMap.put("errMsg", "empty shopId");
+                }
+            }
+        return modelMap;
+    }
 
     @RequestMapping(value="getshopinitinfo", method=RequestMethod.GET)
     @ResponseBody
@@ -102,15 +121,90 @@ public class ShopManagementController {
 
         //register shop
         if(shop != null && shopImg !=null) {
-            PersonInfo owner = new PersonInfo();
-            //session todo
-            owner.setUserId(1L);
+            //where is the user from
+            // before operate shop, user need to login
+            //when log in, write user info to session
+            PersonInfo owner = (PersonInfo) request.getSession().getAttribute("user");
             shop.setOwner(owner);
             ShopExecution se = null;
 
             try {
                 se = shopService.addShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
                 if(se.getState() == ShopStateEnum.CHECK.getState()) {
+                    modelMap.put("success", true);
+                    List<Shop> shopList = (List<Shop>) request.getSession().getAttribute("shopList");
+                    if(shopList == null || shopList.size() == 0) {
+                        shopList = new ArrayList<Shop>();
+                    }
+                    shopList.add(se.getShop());
+                    request.getSession().setAttribute("shopList", shopList);
+                } else {
+                    modelMap.put("success", false);
+                    modelMap.put("errMsg", se.getStateInfo());
+                }
+            } catch (IOException e) {
+                modelMap.put("success", false);
+                modelMap.put("errMsg", se.getStateInfo());
+            }
+            return modelMap;
+        } else {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "please input shop information");
+            return modelMap;
+        }
+
+    }
+
+    @RequestMapping(value="/modifyshop", method=RequestMethod.POST)
+    @ResponseBody //convert to json
+    private Map<String, Object> modifyShop(HttpServletRequest request) {
+        Map<String, Object> modelMap = new HashMap<>();
+        //captcha
+        if(!CodeUtil.checkVerifyCode(request)){
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "wrong captcha");
+            return modelMap;
+        }
+
+        //get information from front end, convert it to object
+        String shopStr = HttpServletRequestUtil.getString(request, "shopStr");
+        ObjectMapper mapper = new ObjectMapper();
+        Shop shop = null;
+
+        try {
+            shop = mapper.readValue(shopStr, Shop.class);
+        } catch (Exception e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.getMessage());
+            return modelMap;
+        }
+
+        //get file stream from front end, put into shopImg
+        CommonsMultipartFile shopImg = null;
+        //file resolver: resolve file information in request
+        //get content from this session's context
+        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
+
+        //check if there file stream in request
+        if(commonsMultipartResolver.isMultipart(request)) {
+            //force to covert request to MulitpartHttpServletRequest
+            MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
+            //then extract file stream from request, so that can be processed by spring
+            shopImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile("shopImg");
+        }
+
+        //update shop information
+        if(shop != null && shop.getShopId() != null) {
+
+            ShopExecution se = null;
+
+            try {
+                if(shopImg == null) {
+                    se = shopService.modifyShop(shop, null, null);
+                } else {
+                    se = shopService.modifyShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+                }
+                if(se.getState() == ShopStateEnum.SUCCESS.getState()) {
                     modelMap.put("success", true);
                 } else {
                     modelMap.put("success", false);
@@ -130,6 +224,9 @@ public class ShopManagementController {
         }
 
     }
+
+
+
 
 //    private static void inputStreamToFile(InputStream ins, File file){
 //        FileOutputStream os = null;
