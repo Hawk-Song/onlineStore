@@ -15,4 +15,9 @@ public class ShopAdminController {
         //because in spring configuration file spring-web.xml
         //InternalResourceViewResolver, we have set prefix value="/WEB-INF/html/", and suffix as .html
     }
+
+    @RequestMapping(value="/shoplist")
+    public String shopList() {
+        return "shop/shoplist";
+    }
 }
